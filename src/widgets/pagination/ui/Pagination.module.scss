@@ -1,0 +1,12 @@
+.cont {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  width: fit-content;
+  .arrowsWrapper {
+    display: flex;
+    column-gap: 20px;
+  }
+}

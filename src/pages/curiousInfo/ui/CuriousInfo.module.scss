@@ -1,0 +1,18 @@
+.cont {
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: $max-width;
+  border: 1px solid rgba($accent-color, 0.1);
+  /* крест из направляющих */
+  background:
+    linear-gradient(rgba($accent-color, 0.1), rgba($accent-color, 0.1)),
+    linear-gradient(rgba($accent-color, 0.1), rgba($accent-color, 0.1));
+  background-size:
+    100% 1px,
+    1px 100%;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  /* -------------------- */
+}

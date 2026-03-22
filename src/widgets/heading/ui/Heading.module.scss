@@ -1,0 +1,11 @@
+.cont {
+  display: flex;
+  column-gap: 80px;
+  height: min-content;
+  align-items: stretch;
+  font-size: 56px;
+  line-height: 120%;
+  p {
+    max-width: 353px;
+  }
+}
