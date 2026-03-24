@@ -35,6 +35,11 @@ export const Info: React.FC = () => {
             isMobile={isMobile}
           />
         )}
+        {!data && (
+          <h1 style={{ flex: '1', margin: '0 auto' }}>
+            ГДЕ-ТО ЗДЕСЬ МОГ БЫ БЫТЬ ЛОАДЕР-КОМПОНЕНТ😄
+          </h1>
+        )}
       </div>
       {data && data.length && (
         <>
