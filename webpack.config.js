@@ -1,14 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const isProd = process.env.NODE_ENV === 'production';
-
+// publicPath: /Only/ для деплоя, /для локал
 module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
-    publicPath: isProd ? '/Only/' : '/',
+    publicPath: '/',
     clean: true,
   },
   resolve: {
