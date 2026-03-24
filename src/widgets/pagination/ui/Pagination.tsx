@@ -10,8 +10,7 @@ import { TPaginationProps } from '../model/type';
 import padZero from '@/shared/lib/utils/padZero';
 import usePagination from '@/shared/lib/utils/hooks/usePagination';
 import useMediaQuery from '@/shared/lib/utils/hooks/useMediaQuery';
-import { hexToRgb } from '@/shared/lib/utils/hexToRgb';
-import { TColorString } from '@/shared/model/type';
+
 
 export const Pagination: React.FC<TPaginationProps> = (props) => {
   const { activeCathegory, setActiveCathegory, total } = props;

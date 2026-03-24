@@ -27,7 +27,7 @@ export const PaginationDots: React.FC<TPaginationDotsProps> = (props) => {
           onClick={() => setActiveCathegory(index)}
           className={styles.dot}
           style={{
-            opacity: index === activeCathegory ? 1 : 0.5,
+            opacity: index === activeCathegory ? 1 : 0.4,
           }}
         />
       ))}

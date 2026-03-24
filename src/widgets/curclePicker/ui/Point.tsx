@@ -8,12 +8,14 @@ import { COLOR_MAIN_BG } from '@/shared/styles/global';
 import { FloatingText } from '@/shared/ui/floatingText';
 
 export const Point: React.FC<TPointProps> = (props) => {
-  const { isActive, index, total, handleClick, label } = props;
+  const { isActive, index, total, handleClick,  } = props;
   const ref = useRef<HTMLDivElement | null>(null);
   const numberRef = useRef<HTMLParagraphElement | null>(null);
+  const floatingRef = useRef<HTMLDivElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
   const { x, y } = getPosition(index, total);
-  const offsetX = 20;
+  // const offsetX = 20;
+  // console.log('label', rotation, label);
 
   useEffect(() => {
     if (!ref.current || !numberRef.current) return;
@@ -40,6 +42,17 @@ export const Point: React.FC<TPointProps> = (props) => {
       },
       '<',
     );
+
+    // tl.current.to(
+    //   floatingRef.current,
+    //   {
+    //     // transform: `rotate(${-rotation}deg)`,
+    //     opacity: 1,
+    //     duration: 0.4,
+    //     ease: 'power2.out',
+    //   },
+    //   '<',
+    // );
   }, []);
 
   useEffect(() => {
@@ -78,7 +91,22 @@ export const Point: React.FC<TPointProps> = (props) => {
       >
         <p ref={numberRef}>{index + 1}</p>
       </div>
-      {/* {isActive && label && <FloatingText text={label} />} */}
+      {/* {label && (
+        <div
+          ref={floatingRef}
+          className={styles.floatingText}
+          style={{
+            position: 'absolute',
+            left: `calc(50% + ${x}px + ${CURCLE_ACTIVE_ITEM_SIZE / 2 + 20}px)`,
+            top: `calc(50% + ${y}px - ${CURCLE_ITEM_SIZE / 2}px)`,
+            opacity: 0,
+            pointerEvents: 'none',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {label}
+        </div>
+      )} */}
     </>
   );
 };
