@@ -7,11 +7,10 @@ export type TCurclePickerProps = {
   setActiveCathegory: Dispatch<SetStateAction<number>>;
 };
 
-export type TPointProps = {
+export type TPointWithDescriptionProps = {
   isActive: boolean;
   index: number;
   total: number;
   handleClick: (i: number) => void;
-  // label?: string;
-  // rotation: number;
+  label: string;
 };
