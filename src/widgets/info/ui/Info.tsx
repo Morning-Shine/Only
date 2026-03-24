@@ -14,7 +14,7 @@ import { PaginationDots } from '@/widgets/paginationDots';
 export const Info: React.FC = () => {
   const [data, setData] = useState<IMockInfo[] | null>(null);
   const [activeCathegory, setActiveCathegory] = useState(0);
-
+  /** @param можно передать для теста */
   useEffect(() => {
     fetchInfo().then(setData);
   }, []);
