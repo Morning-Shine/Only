@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
 
 :root {
-  --main-color: #3877EE;
-  --accent-color: #42567a;
-  --contrast-color: #EF5DA8;
+  --main-color: #3877ee;
+  --accent-color: rgb(66, 86, 122);
+  --contrast-color: #ef5da8;
+  --main-bg-color: #f4f5f9;
+}
+body {
+  background-color: var(--main-bg-color);
 }

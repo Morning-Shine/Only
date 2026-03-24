@@ -5,8 +5,14 @@
   font-size: 14px;
   font-weight: 400;
   width: fit-content;
+  @media (max-width: $breakpoint) {
+    row-gap: 11px;
+  }
   .arrowsWrapper {
     display: flex;
     column-gap: 20px;
+    @media (max-width: $breakpoint) {
+      column-gap: 8px;
+    }
   }
 }

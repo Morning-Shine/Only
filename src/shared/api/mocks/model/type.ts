@@ -6,12 +6,12 @@ export type TInfoCathegory =
   | 'music'
   | 'painting';
 
-interface IMockData {
+export interface IMockData {
   year: number;
   desc: string;
-  cathegory: TInfoCathegory;
 }
 export interface IMockInfo {
   period: [number, number];
+  cathegory?: TInfoCathegory;
   data: IMockData[];
 }

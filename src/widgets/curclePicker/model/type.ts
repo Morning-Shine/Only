@@ -12,4 +12,5 @@ export type TPointProps = {
   index: number;
   total: number;
   handleClick: (i: number) => void;
+  label?: string;
 };

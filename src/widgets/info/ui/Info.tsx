@@ -4,9 +4,12 @@ import { CurclePicker } from '@/widgets/curclePicker';
 import { fetchInfo } from '@/shared/api/mocks/infoApi';
 import { IMockInfo } from '@/shared/api/mocks/model/type';
 import { HEADING_NAME } from '../model/constants';
-import { Pagination } from '@/widgets/pagination';
 import { DoubleBigNumbers } from './DoubleBigNumbers';
 import styles from './Info.module.scss';
+import useMediaQuery from '@/shared/lib/utils/hooks/useMediaQuery';
+import { BREAKPOINT_MOBILE } from '@/shared/styles/global';
+import { BottomContent } from './BottomContent';
+import { PaginationDots } from '@/widgets/paginationDots';
 
 export const Info: React.FC = () => {
   const [data, setData] = useState<IMockInfo[] | null>(null);
@@ -16,28 +19,43 @@ export const Info: React.FC = () => {
     fetchInfo().then(setData);
   }, []);
 
+  const isMobile = useMediaQuery(`(max-width: ${BREAKPOINT_MOBILE}px)`);
+
   return (
     <article className={styles.cont}>
-      <div className={styles.auxiliaryWrapper}>
-        <Heading heading={HEADING_NAME} />
+      <div className={styles.innerWrapper}>
+        <div className={styles.headerWrapper}>
+          <Heading heading={HEADING_NAME} />
+        </div>
         {data && data.length && (
-          <Pagination
+          <BottomContent
             activeCathegory={activeCathegory}
             setActiveCathegory={setActiveCathegory}
-            total={data.length}
+            data={data}
+            isMobile={isMobile}
           />
         )}
       </div>
-      <CurclePicker
-        data={data}
-        activeCathegory={activeCathegory}
-        setActiveCathegory={setActiveCathegory}
-      />
       {data && data.length && (
-        <DoubleBigNumbers
-          num1={data[activeCathegory].period[0]}
-          num2={data[activeCathegory].period[1]}
-        />
+        <>
+          {isMobile ? (
+            <PaginationDots
+              data={data}
+              activeCathegory={activeCathegory}
+              setActiveCathegory={setActiveCathegory}
+            />
+          ) : (
+            <CurclePicker
+              data={data}
+              activeCathegory={activeCathegory}
+              setActiveCathegory={setActiveCathegory}
+            />
+          )}
+          <DoubleBigNumbers
+            num1={data[activeCathegory].period[0]}
+            num2={data[activeCathegory].period[1]}
+          />
+        </>
       )}
     </article>
   );

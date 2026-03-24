@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .lg {
-  font-size: 200px;
+  font-size: clamp(140px, 13.89vw, 200px);
   font-weight: 600;
   line-height: 160%;
   letter-spacing: -2%;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: clamp(56px, 17.5vw, 100px);
+  }
 }
 
 .sm {
@@ -12,5 +15,6 @@
   font-weight: 400;
   line-height: 120%;
   letter-spacing: 0;
+  font-style: normal;
   font-family: 'Bebas Neue';
 }

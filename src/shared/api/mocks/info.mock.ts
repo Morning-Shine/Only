@@ -3,126 +3,117 @@ import { IMockInfo } from './model/type';
 export const mockInfo: IMockInfo[] = [
   {
     period: [1990, 1996],
+    cathegory: 'literature',
     data: [
       {
         year: 1992,
         desc: 'Нобелевская премия по литературе — Дерек Уолкотт, «За блестящий образец карибского эпоса в 64 разделах».',
-        cathegory: 'literature',
       },
       {
         year: 1994,
         desc: '«Бессонница» — роман Стивена Кинга.',
-        cathegory: 'literature',
       },
       {
         year: 1995,
         desc: 'Нобелевская премия по литературе — Шеймас Хини',
-        cathegory: 'literature',
+      },
+      {
+        year: 1995,
+        desc: 'Нобелевская премия по литературе — Шеймас Хини',
       },
     ],
   },
   {
     period: [1993, 1997],
+    cathegory: 'painting',
     data: [
       {
         year: 1992,
         desc: 'Нобелевская премия по литературе — Дерек Уолкотт, «За блестящий образец карибского эпоса в 64 разделах».',
-        cathegory: 'literature',
       },
       {
         year: 1994,
         desc: '«Бессонница» — роман Стивена Кинга.',
-        cathegory: 'literature',
       },
       {
         year: 1995,
         desc: 'Нобелевская премия по литературе — Шеймас Хини',
-        cathegory: 'literature',
       },
     ],
   },
   {
     period: [1995, 2000],
+    cathegory: 'cinema',
     data: [
       {
-        year: 1992,
+        year: 1995,
         desc: 'Нобелевская премия по литературе — Дерек Уолкотт, «За блестящий образец карибского эпоса в 64 разделах».',
-        cathegory: 'literature',
       },
       {
         year: 1994,
         desc: '«Бессонница» — роман Стивена Кинга.',
-        cathegory: 'literature',
       },
       {
         year: 1995,
         desc: 'Нобелевская премия по литературе — Шеймас Хини',
-        cathegory: 'literature',
       },
     ],
   },
   {
     period: [1989, 1996],
+    cathegory: 'theater',
     data: [
       {
-        year: 1992,
+        year: 1989,
         desc: 'Нобелевская премия по литературе — Дерек Уолкотт, «За блестящий образец карибского эпоса в 64 разделах».',
-        cathegory: 'literature',
       },
       {
         year: 1994,
         desc: '«Бессонница» — роман Стивена Кинга.',
-        cathegory: 'literature',
       },
       {
         year: 1995,
         desc: 'Нобелевская премия по литературе — Шеймас Хини',
-        cathegory: 'literature',
       },
     ],
   },
   {
     period: [1992, 1997],
+    cathegory: 'music',
     data: [
       {
         year: 1992,
         desc: 'Нобелевская премия по литературе — Дерек Уолкотт, «За блестящий образец карибского эпоса в 64 разделах».',
-        cathegory: 'literature',
       },
       {
         year: 1994,
         desc: '«Бессонница» — роман Стивена Кинга.',
-        cathegory: 'literature',
       },
       {
         year: 1995,
         desc: 'Нобелевская премия по литературе — Шеймас Хини',
-        cathegory: 'literature',
       },
     ],
   },
   {
     period: [2015, 2022],
+    cathegory: 'since',
     data: [
       {
         year: 2015,
         desc: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
-        cathegory: 'since',
       },
       {
         year: 2016,
         desc: 'что-то придумать',
-        cathegory: 'literature',
       },
       {
         year: 2015,
         desc: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
-        cathegory: 'music',
       },
       {
         year: 2022,
         desc: '13 сентября — частное солнечное затмение, видимое в Южной Африке и части Антарктиды',
-        cathegory: 'painting',
       },
     ],
   },

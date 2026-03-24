@@ -4,14 +4,16 @@ import getPosition from '../lib/getPosition';
 import styles from './CurclePicker.module.scss';
 import { TPointProps } from '../model/type';
 import { CURCLE_ACTIVE_ITEM_SIZE, CURCLE_ITEM_SIZE } from '../model/constants';
-
+import { COLOR_MAIN_BG } from '@/shared/styles/global';
+import { FloatingText } from '@/shared/ui/floatingText';
 
 export const Point: React.FC<TPointProps> = (props) => {
-  const { isActive, index, total, handleClick } = props;
+  const { isActive, index, total, handleClick, label } = props;
   const ref = useRef<HTMLDivElement | null>(null);
   const numberRef = useRef<HTMLParagraphElement | null>(null);
   const tl = useRef<gsap.core.Timeline | null>(null);
   const { x, y } = getPosition(index, total);
+  const offsetX = 20;
 
   useEffect(() => {
     if (!ref.current || !numberRef.current) return;
@@ -23,8 +25,8 @@ export const Point: React.FC<TPointProps> = (props) => {
       height: CURCLE_ACTIVE_ITEM_SIZE,
       x: shift,
       y: shift,
-      backgroundColor: 'white',
-      borderColor: 'rgba(49, 63, 89, 0.5)',
+      backgroundColor: COLOR_MAIN_BG,
+      borderColor: 'rgba(48, 62, 88, 0.5)',
       duration: 0.6,
       ease: 'power2.out',
     });
@@ -61,19 +63,22 @@ export const Point: React.FC<TPointProps> = (props) => {
   };
 
   return (
-    <div
-      ref={ref}
-      className={`${styles.circleItem} ${isActive ? styles.active : ''}`}
-      style={{
-        left: `calc(50% + ${x}px - ${CURCLE_ITEM_SIZE / 2}px)`,
-        top: `calc(50% + ${y}px - ${CURCLE_ITEM_SIZE / 2}px)`,
-        cursor: isActive ? 'default' : 'pointer',
-      }}
-      onClick={() => handleClick(index)}
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
-      <p ref={numberRef}>{index + 1}</p>
-    </div>
+    <>
+      <div
+        ref={ref}
+        className={`${styles.circleItem} ${isActive ? styles.active : ''}`}
+        style={{
+          left: `calc(50% + ${x}px - ${CURCLE_ITEM_SIZE / 2}px)`,
+          top: `calc(50% + ${y}px - ${CURCLE_ITEM_SIZE / 2}px)`,
+          cursor: isActive ? 'default' : 'pointer',
+        }}
+        onClick={() => handleClick(index)}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
+        <p ref={numberRef}>{index + 1}</p>
+      </div>
+      {/* {isActive && label && <FloatingText text={label} />} */}
+    </>
   );
 };

@@ -53,7 +53,10 @@ module.exports = {
           },
         ],
       },
-
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
       {
         test: /\.(png|jpe?g|gif|woff2?|eot|ttf|otf)$/i,
         type: 'asset',

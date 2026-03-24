@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { TBigTextProps } from '../model/type';
 import styles from './BigText.module.scss';
 
-
 export const BigText: React.FC<TBigTextProps> = (props) => {
   const { size, color, children } = props;
 

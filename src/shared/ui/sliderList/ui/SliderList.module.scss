@@ -1,0 +1,33 @@
+.cont {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+  .innerCont {
+    padding: 0 80px;
+    @media (max-width: $breakpoint-mobile) {
+      padding: 0 20px;
+    }
+  }
+  .leftBtn,
+  .rightBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .leftBtn {
+    left: 20px;
+  }
+  .rightBtn {
+    right: 20px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  :global(.swiper-slide) {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+  :global(.swiper-slide-active) {
+    opacity: 1;
+  }
+}

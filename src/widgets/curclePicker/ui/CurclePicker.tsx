@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { TCurclePickerProps } from '../model/type';
 import { CURCLE_SIZE, PERIODS_MAX_COUNT } from '../model/constants';
+import { FloatingText } from '@/shared/ui/floatingText';
 import gsap from 'gsap';
 import styles from './CurclePicker.module.scss';
 import { Point } from './Point';
+
 
 export const CurclePicker: React.FC<TCurclePickerProps> = (props) => {
   const { data, activeCathegory, setActiveCathegory } = props;
@@ -51,7 +53,7 @@ export const CurclePicker: React.FC<TCurclePickerProps> = (props) => {
       className={styles.curcle}
       ref={containerRef}
     >
-      {data.map((__, i) => {
+      {data.map((point, i) => {
         return (
           <Point
             key={i}
@@ -59,9 +61,13 @@ export const CurclePicker: React.FC<TCurclePickerProps> = (props) => {
             index={i}
             total={total}
             handleClick={handleClick}
+            // label={
+            //   point?.cathegory ? INFO_CATHEGORY[point.cathegory] : undefined
+            // }
           />
         );
       })}
+      {/* <FloatingText text={'ДОДЕЛАТЬ'} /> */}
     </div>
   );
 };

@@ -1,0 +1,12 @@
+@media (max-width: $breakpoint-mobile) {
+  .text {
+    width: 100%;
+    padding-bottom: 25px;
+    font-size: 18px;
+    line-height: 145%;
+    font-weight: bold;
+  }
+  .underline {
+    border-bottom: 1px solid #c7cdd9;
+  }
+}

@@ -8,4 +8,10 @@
   p {
     max-width: 353px;
   }
+  @media (max-width: $breakpoint-mobile) {
+    font-size: clamp(20px, 6.25vw, 56px);
+    p {
+      max-width: 123px;
+    }
+  }
 }
